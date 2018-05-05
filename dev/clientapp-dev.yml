@@ -1,7 +1,9 @@
+#每个App一份(local、test、pro)上传到github
 server:
   port: 1111
 
 spring:
+  profiles: dev
   application:
     name: client-app
   http:
