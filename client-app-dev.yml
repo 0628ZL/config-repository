@@ -27,7 +27,7 @@ spring:
       max-wait: 60000
       time-between-eviction-runs-millis: 60000
       min-evictable-idle-time-millis: 30000
-      validation-query: SELECT 'x'
+      validation-query: SELECT '0'
       filters: stat,slf4j
       test-while-idle: true
       test-on-borrow: false
@@ -48,7 +48,7 @@ spring:
       local.datasource.max-wait: 60000
       local.datasource.time-between-eviction-runs-millis: 60000
       local.datasource.min-evictable-idle-time-millis: 30000
-      local.datasource.validation-query: SELECT 'x'
+      local.datasource.validation-query: SELECT '0'
       local.datasource.filters: stat,slf4j
       local.datasource.test-while-idle: true
       local.datasource.test-on-borrow: false
@@ -65,7 +65,7 @@ spring:
       test.datasource.max-wait: 60000
       test.datasource.time-between-eviction-runs-millis: 60000
       test.datasource.min-evictable-idle-time-millis: 30000
-      test.datasource.validation-query: SELECT 'x'
+      test.datasource.validation-query: SELECT '0'
       test.datasource.filters: stat,slf4j
       test.datasource.test-while-idle: true
       test.datasource.test-on-borrow: false
