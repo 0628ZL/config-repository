@@ -1,15 +1,11 @@
 #每个App一份(local、test、pro)上传到github，经测试只支持一层目录(可通过浏览器访问测试)
 
-#在App中定义端口，方便添加集群节点
+#在App中定义端口及应用名，方便添加集群节点
 #server:
 #  port: 1111
 
 
 spring:
-#  profiles: dev
-#在App中定义应用名
-#  application:
-#    name: client-app
   http:
     multipart:
       maxFileSize: 10Mb
