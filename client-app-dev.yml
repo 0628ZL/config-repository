@@ -7,6 +7,7 @@
 
 spring:
   profiles: dev
+#在App中定义应用名
 #  application:
 #    name: client-app
   http:
@@ -16,7 +17,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     druid: 
-      #不带前缀，Spring自动加载
+#      不带前缀，Spring自动加载
       url: jdbc:mysql://101.132.182.194:9899/dbyscwstx?useUnicode=true&characterEncoding=UTF-8
       driver-class-name: com.mysql.jdbc.Driver
       username: root
@@ -37,7 +38,7 @@ spring:
       web-stat-filter:  #关闭采集数据功能
         enabled: false
       
-      #多数据源一（本地）
+#      多数据源一（本地）
       local.datasource.url: jdbc:mysql://101.132.182.194:9899/dbyscwstx?useUnicode=true&characterEncoding=UTF-8
       local.datasource.driver-class-name: com.mysql.jdbc.Driver
       local.datasource.username: root
@@ -54,7 +55,7 @@ spring:
       local.datasource.test-on-borrow: false
       local.datasource.test-on-return: false
       
-      #多数据源二（测试）
+#      多数据源二（测试）
       test.datasource.url: jdbc:mysql://rm-uf6yn1yga21gc3fq81o.mysql.rds.aliyuncs.com:3306/drds_bj_scph1230_cmiq_0000?useUnicode=true&characterEncoding=UTF-8
       test.datasource.driver-class-name: com.mysql.jdbc.Driver
       test.datasource.username: drds_bj_scph1230
@@ -70,9 +71,7 @@ spring:
       test.datasource.test-while-idle: true
       test.datasource.test-on-borrow: false
       test.datasource.test-on-return: false
-  
-  
-  
+
   thymeleaf:
       cache: false
       check-template-location: true
