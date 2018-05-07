@@ -6,7 +6,7 @@
 
 
 spring:
-  profiles: dev
+#  profiles: dev
 #在App中定义应用名
 #  application:
 #    name: client-app
