@@ -1,6 +1,9 @@
 #每个App一份(local、test、pro)上传到github，经测试只支持一层目录(可通过浏览器访问测试)
-server:
-  port: 1111
+
+#在App中定义端口，方便添加集群节点
+#server:
+#  port: 1111
+
 
 spring:
   profiles: dev
@@ -12,6 +15,7 @@ spring:
       maxRequestSize: 100Mb
   datasource:
     druid:
+      #不带前缀，Spring自动加载
       url: jdbc:mysql://101.132.182.194:9899/dbyscwstx?useUnicode=true&characterEncoding=UTF-8
       driver-class-name: com.mysql.jdbc.Driver
       username: root
@@ -31,6 +35,43 @@ spring:
         enabled: true
       web-stat-filter:  #关闭采集数据功能
         enabled: false
+      
+      #多数据源一（本地）
+      local.datasource.url: jdbc:mysql://101.132.182.194:9899/dbyscwstx?useUnicode=true&characterEncoding=UTF-8
+      local.datasource.driver-class-name: com.mysql.jdbc.Driver
+      local.datasource.username: root
+      local.datasource.password: ArM%BG@u@mhWv0TA
+      local.datasource.initial-size: 20
+      local.datasource.max-active: 100
+      local.datasource.min-idle: 5
+      local.datasource.max-wait: 60000
+      local.datasource.time-between-eviction-runs-millis: 60000
+      local.datasource.min-evictable-idle-time-millis: 30000
+      local.datasource.validation-query: SELECT 'x'
+      local.datasource.filters: stat,slf4j
+      local.datasource.test-while-idle: true
+      local.datasource.test-on-borrow: false
+      local.datasource.test-on-return: false
+      
+      #多数据源二（测试）
+      test.datasource.url: jdbc:mysql://rm-uf6yn1yga21gc3fq81o.mysql.rds.aliyuncs.com:3306/drds_bj_scph1230_cmiq_0000?useUnicode=true&characterEncoding=UTF-8
+      test.datasource.driver-class-name: com.mysql.jdbc.Driver
+      test.datasource.username: drds_bj_scph1230
+      test.datasource.password: dWkSfAIW53CJRLUy
+      test.datasource.initial-size: 20
+      test.datasource.max-active: 100
+      test.datasource.min-idle: 5
+      test.datasource.max-wait: 60000
+      test.datasource.time-between-eviction-runs-millis: 60000
+      test.datasource.min-evictable-idle-time-millis: 30000
+      test.datasource.validation-query: SELECT 'x'
+      test.datasource.filters: stat,slf4j
+      test.datasource.test-while-idle: true
+      test.datasource.test-on-borrow: false
+      test.datasource.test-on-return: false
+  
+  
+  
   thymeleaf:
       cache: false
       check-template-location: true
