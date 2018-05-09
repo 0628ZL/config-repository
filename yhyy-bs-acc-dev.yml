@@ -1,8 +1,8 @@
 spring:
-  application: 
+  application:
     name: yhyy-bs-acc
-  datasource:                           # MabtisÊı¾İÔ´£¬ÓÃÓÚÖ÷¿â²Ù×÷
-    druid: 
+  datasource:                           # Mabtisæ•°æ®æºï¼Œç”¨äºä¸»åº“æ“ä½œ
+    druid:
       url: jdbc:mysql://101.132.182.194:9899/dbyscwstx
       username: root
       password: ArM%BG@u@mhWv0TA
@@ -39,8 +39,8 @@ management:
     enabled: false
 
 mybatis:
-  check-config-location: true                          #ÅäÖÃĞ£Ñé£¨true/false£©
-  config-location: classpath:mybatis-config.xml         #mybatisÅäÖÃÎÄ¼ş
+  check-config-location: true                          #é…ç½®æ ¡éªŒï¼ˆtrue/falseï¼‰
+  config-location: classpath:mybatis-config.xml         #mybatisé…ç½®æ–‡ä»¶
   mapper-locations: classpath*:com/yhyy/mapper/**/*.xml
 
 
@@ -49,8 +49,8 @@ eureka:
   client:
     healthcheck:
       enabled: true
-#    serviceUrl:
-#      defaultZone: http://localhost:8761/eureka/
+    serviceUrl:
+      defaultZone: http://192.168.1.178:8669/eureka/
   instance:
     lease-renewal-interval-in-seconds: 5
     lease-expiration-duration-in-seconds: 10
@@ -70,7 +70,7 @@ pay:
   kq:
     merchantAcctId: 1020993241301
     bgUrl: http://101.132.185.3:8080/v1/kq/cb/doPcPayCallback
-    pageUrl: 
+    pageUrl:
     check:
       cipher: 123123
   lian:
@@ -80,7 +80,7 @@ pay:
       WAP_URL_RETURN: http://testpayapi.yuehuayueyou.com/v1/pay/lianwap/waptongbuCallback
       WAP_NOTIFY_URL_SECOND: http://testpayapi.yuehuayueyou.com/v1/pay/lianwapSecond/wapyibuNotify
       WAP_URL_RETURN_SECOND: http://testpayapi.yuehuayueyou.com/v1/pay/lianwapSecond/waptongbuCallback
-      #ÒıÁ÷ËÍ»ı·ÖH5£º
+      #å¼•æµé€ç§¯åˆ†H5ï¼š
       wap_buyScore_url: https://testtm.yuehuayueyou.com/buyScore
       wap_recharge_url: https://testtm.yuehuayueyou.com/recharge
       wap_shopping_url: https://testtm.yuehuayueyou.com/shopping
@@ -102,7 +102,7 @@ transfer:
     freezentime: 10
     count: 10
 
-#Í¼Æ¬´æ´¢Â·¾¶
+#å›¾ç‰‡å­˜å‚¨è·¯å¾„
 pic:
   url: https://yuehuapic.oss-cn-shanghai.aliyuncs.com/
 
@@ -110,6 +110,7 @@ logging:
   level:
     com.aliyun.openservices.shade.com.alibaba.rocketmq.client.consumer.store.RemoteBrokerOffsetStore: error
 
-#Ãæ¶ÔÃæ¸¶¿îºÚÃûµ¥,ÊÕ¿îÈËÓÃ»§±àºÅ£¬¶à¸öÊ±Ó¢ÎÄ¶ººÅ·Ö¸ô
+#é¢å¯¹é¢ä»˜æ¬¾é»‘åå•,æ”¶æ¬¾äººç”¨æˆ·ç¼–å·ï¼Œå¤šä¸ªæ—¶è‹±æ–‡é€—å·åˆ†éš”
 qr_code:
   blacklist: 1710
+
